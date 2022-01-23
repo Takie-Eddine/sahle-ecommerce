@@ -89,12 +89,12 @@
                 <ul class="menu-content">
                     <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{ __('admin/sidebar.shipping methods') }} </a>
                         <ul class="menu-content">
-                            <li><a class="menu-item" href=""
+                            <li><a class="menu-item" href="{{route('edit.shippings.method','free')}}"
                                     data-i18n="nav.templates.vert.classic_menu"> {{ __('admin/sidebar.free shipping') }}</a>
                             </li> 
-                            <li><a class="menu-item" href=""> {{ __('admin/sidebar.local shipping') }} </a>
+                            <li><a class="menu-item" href="{{route('edit.shippings.method','inner')}}"> {{ __('admin/sidebar.local shipping') }} </a>
                             </li>
-                            <li><a class="menu-item" href=""
+                            <li><a class="menu-item" href="{{route('edit.shippings.method','outer')}}"
                                     data-i18n="nav.templates.vert.compact_menu"> {{ __('admin/sidebar.outer shipping') }} </a>
                             </li>
                             
