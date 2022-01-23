@@ -3,11 +3,11 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
             <li class="nav-item active"><a href=""><i class="la la-mouse-pointer"></i><span
-                class="menu-title" data-i18n="nav.add_on_drag_drop.main">الرئيسية </span></a>
+                class="menu-title" data-i18n="nav.add_on_drag_drop.main">{{ __('admin/sidebar.home') }} </span></a>
             </li>
 
             <li class="nav-item"><a href=""><i class="la la-home"></i>
-                <span class="menu-title" data-i18n="nav.dash.main">لغات الموقع  </span>
+                <span class="menu-title" data-i18n="nav.dash.main"> {{ __('admin/sidebar.languages') }}  </span>
                 <span
                     class="badge badge badge-info badge-pill float-right mr-2"></span>
             </a>
@@ -23,7 +23,7 @@
 
 
             <li class="nav-item"><a href=""><i class="la la-group"></i>
-                <span class="menu-title" data-i18n="nav.dash.main">الأقسام الرئيسية </span>
+                <span class="menu-title" data-i18n="nav.dash.main"> {{ __('admin/sidebar.main categories') }} </span>
                 <span
                     class="badge badge badge-danger badge-pill float-right mr-2"></span>
             </a>
@@ -38,7 +38,7 @@
             </li>
 
             <li class="nav-item"><a href=""><i class="la la-male"></i>
-                <span class="menu-title" data-i18n="nav.dash.main">الأقسام الفرعية  </span>
+                <span class="menu-title" data-i18n="nav.dash.main">  {{ __('admin/sidebar.sub categories') }}  </span>
                 <span
                     class="badge badge badge-warning  badge-pill float-right mr-2"></span>
             </a>
@@ -85,24 +85,19 @@
 
 
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
-                                                                                    data-i18n="nav.templates.main">Templates</span></a>
+                                                                                    data-i18n="nav.templates.main">{{ __('admin/sidebar.settings') }}</span></a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">Vertical</a>
+                    <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">{{ __('admin/sidebar.shipping methods') }} </a>
                         <ul class="menu-content">
-                            <li><a class="menu-item" href="../vertical-menu-template"
-                                    data-i18n="nav.templates.vert.classic_menu">Classic Menu</a>
+                            <li><a class="menu-item" href=""
+                                    data-i18n="nav.templates.vert.classic_menu"> {{ __('admin/sidebar.free shipping') }}</a>
                             </li> 
-                            <li><a class="menu-item" href="../vertical-modern-menu-template">Modern Menu</a>
+                            <li><a class="menu-item" href=""> {{ __('admin/sidebar.local shipping') }} </a>
                             </li>
-                            <li><a class="menu-item" href="../vertical-compact-menu-template"
-                                    data-i18n="nav.templates.vert.compact_menu">Compact Menu</a>
+                            <li><a class="menu-item" href=""
+                                    data-i18n="nav.templates.vert.compact_menu"> {{ __('admin/sidebar.outer shipping') }} </a>
                             </li>
-                            <li><a class="menu-item" href="../vertical-content-menu-template"
-                                    data-i18n="nav.templates.vert.content_menu">Content Menu</a>
-                            </li>
-                            <li><a class="menu-item" href="../vertical-overlay-menu-template"
-                                    data-i18n="nav.templates.vert.overlay_menu">Overlay Menu</a>
-                            </li>
+                            
                         </ul>
                     </li>
                     <li><a class="menu-item" href="#" data-i18n="nav.templates.horz.main">Horizontal</a>
