@@ -68,7 +68,7 @@
             </li>
 
 
-       
+
 
             <li class="nav-item">
                 <a href=""><i class="la la-male"></i>
@@ -91,13 +91,13 @@
                         <ul class="menu-content">
                             <li><a class="menu-item" href="{{route('edit.shippings.method','free')}}"
                                     data-i18n="nav.templates.vert.classic_menu"> {{ __('admin/sidebar.free shipping') }}</a>
-                            </li> 
+                            </li>
                             <li><a class="menu-item" href="{{route('edit.shippings.method','inner')}}"> {{ __('admin/sidebar.local shipping') }} </a>
                             </li>
                             <li><a class="menu-item" href="{{route('edit.shippings.method','outer')}}"
                                     data-i18n="nav.templates.vert.compact_menu"> {{ __('admin/sidebar.outer shipping') }} </a>
                             </li>
-                            
+
                         </ul>
                     </li>
                     <li><a class="menu-item" href="#" data-i18n="nav.templates.horz.main">Horizontal</a>
@@ -962,7 +962,7 @@
                     </li>
                     <li><a class="menu-item" href="form-extended-inputs.html"
                             data-i18n="nav.form_elements.form_extended_inputs">Extended Inputs</a>
-                    </li> 
+                    </li>
                     <li><a class="menu-item" href="form-checkboxes-radios.html"
                             data-i18n="nav.form_elements.form_checkboxes_radios">Checkboxes &amp; Radios</a>
                     </li>
@@ -1331,7 +1331,7 @@
                     </li>
                     <li><a class="menu-item" href="google-bubble-charts.html"
                             data-i18n="nav.google_charts.google_bubble_charts">Bubble charts</a>
-                    </li> 
+                    </li>
                     <li><a class="menu-item" href="google-other-charts.html"
                             data-i18n="nav.google_charts.google_other_charts">Other charts</a>
                     </li>
@@ -1443,7 +1443,7 @@
                 <ul class="menu-content">
                     <li><a class="menu-item" href="chartist-line-charts.html"
                             data-i18n="nav.chartist.chartist_line_charts">Line charts</a>
-                    </li> 
+                    </li>
                     <li><a class="menu-item" href="chartist-bar-charts.html"
                             data-i18n="nav.chartist.chartist_bar_charts">Bar charts</a>
                     </li>

@@ -10,8 +10,8 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">الرئيسية </a>
                             </li>
-                            
-                            <li class="breadcrumb-item active">وسائل التوصيل 
+
+                            <li class="breadcrumb-item active">وسائل التوصيل
                             </li>
                         </ol>
                     </div>
@@ -43,24 +43,24 @@
 
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <form class="form" action="{{route('update.shippings.method',$shippingMethod -> id)}}"
-                                            method="post"
-                                            enctype="multipart/form-data">
-                                        @csrf
+                                    <form class="form" action="{{route('update.shippings.method',$shippingMethod -> id)}}" method="POST" enctype="multipart/form-data">
+
                                         @method('PUT')
+                                        @csrf
+
 
                                         <input type="hidden" name="id" value="{{$shippingMethod -> id}}">
 
-                                        
+
 
                                         <div class="form-body">
 
-                                            
+
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="projectinput1"> الاسم </label>
-                                                        <input type="text" value="{{$shippingMethod -> value}}" id="value"
+                                                        <input type="text" value="{{$shippingMethod -> value}}" id="name"
                                                                 class="form-control"
                                                                 placeholder="  "
                                                                 name="value">
@@ -72,7 +72,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="projectinput1"> قيمة التوصيل </label>
-                                                        <input type="number" value="" id="plain_value"
+                                                        <input type="number" value="{{$shippingMethod -> plain_value}}" id="plain_value"
                                                                 class="form-control"
                                                                 placeholder="  "
                                                                 name="plain_value">
@@ -82,23 +82,23 @@
                                                     </div>
                                                 </div>
 
-                                                
+
                                             </div>
 
 
-                                            
 
 
-                                            
 
 
-                                            
-                                            
+
+
+
+
 
                                         </div>
 
 
-                                        
+
 
                                         <div class="form-actions">
                                             <button type="button" class="btn btn-warning mr-1"

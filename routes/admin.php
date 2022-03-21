@@ -26,7 +26,7 @@ Route::group([
 Route::group(['namespace' => 'Dashboard' , 'middleware' => 'auth:admin' , 'prefix' => 'admin'],function(){
 
 //---------------------------DASHBOARD------------------------//
-    
+
     Route::get('/','DashboardController@index') -> name('admin.dashboard');
 
 //---------------------------DASHBOARD------------------------//
