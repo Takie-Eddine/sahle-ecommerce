@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminLoginRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
@@ -18,7 +19,7 @@ class LoginController extends Controller
 
         //return $request;
 
-        //validation 
+        //validation
 
         $remember_me = $request->has('remember_me') ? true : false;
 
@@ -28,8 +29,25 @@ class LoginController extends Controller
         }
        // notify()->error('خطا في البيانات  برجاء المجاولة مجدا ');
         return redirect()->back()->with(['error' => 'هناك خطا بالبيانات']);
-    
-        
+
+
 
     }
+
+
+
+    public function logout(){
+
+        $gaurd = $this -> getGaurd();
+        $gaurd -> logout();
+
+        return Redirect() -> route('admin.login');
+    }
+
+
+    private function getGaurd(){
+
+        return auth('admin');
+    }
+
 }
