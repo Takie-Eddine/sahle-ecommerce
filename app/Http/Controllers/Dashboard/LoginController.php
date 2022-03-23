@@ -17,7 +17,7 @@ class LoginController extends Controller
 
     public function postLogin(AdminLoginRequest $request){
 
-        //return $request;
+
 
         //validation
 
@@ -27,6 +27,7 @@ class LoginController extends Controller
            // notify()->success('تم الدخول بنجاح  ');
             return redirect() -> route('admin.dashboard');
         }
+
        // notify()->error('خطا في البيانات  برجاء المجاولة مجدا ');
         return redirect()->back()->with(['error' => 'هناك خطا بالبيانات']);
 

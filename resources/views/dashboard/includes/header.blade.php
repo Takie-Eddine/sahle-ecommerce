@@ -37,11 +37,29 @@
                                 <img  style="height: 35px;" src="{{asset('assets/admin/images/logo/logo.png')}}" alt="avatar"><i></i>
                             </span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="">
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('edit.profile')}}">
                             <i class="ft-user"></i> تعديل الملف الشحصي </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i> تسجيل
                                 الخروج </a>
+                        </div>
+                    </li>
+
+
+                    <li class="dropdown dropdown-user nav-item">
+                        <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                            <span class="mr-1"><span class="user-name text-bold-700">{{App::getLocale()}}</span>
+                            </span>
+
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+
+                            <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                            </a>
+
+                            @endforeach
                         </div>
                     </li>
 

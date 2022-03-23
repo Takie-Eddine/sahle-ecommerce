@@ -73,7 +73,7 @@ class SettingsController extends Controller
 
             DB::rollBack();
 
-            return redirect() -> back() -> with(['errors' => 'errors']);
+            return redirect() -> back() -> with(['error' => 'error']);
 
         }
     }
