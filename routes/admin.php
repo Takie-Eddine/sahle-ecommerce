@@ -28,14 +28,14 @@ Route::group(['namespace' => 'Dashboard' , 'middleware' => 'auth:admin' , 'prefi
 
 //---------------------------LOGOUT------------------------//
 Route::get('logout','LoginController@logout') -> name('admin.logout');
-//---------------------------LOGOUT------------------------//
+//---------------------------END-LOGOUT------------------------//
 
 
 //---------------------------DASHBOARD------------------------//
 
     Route::get('/','DashboardController@index') -> name('admin.dashboard');
 
-//---------------------------DASHBOARD------------------------//
+//---------------------------END-DASHBOARD------------------------//
 
 
 //---------------------------SETTINGS------------------------//
@@ -48,19 +48,26 @@ Route::get('logout','LoginController@logout') -> name('admin.logout');
             Route::put('shepping-methods/{id}','SettingsController@updateShippingMethods') -> name('update.shippings.method');
 
 
-    //---------------------------SHIPPING------------------------//
-
-
-
+    //---------------------------END-SHIPPING------------------------//
 
     });
-//---------------------------SETTINGS------------------------//
+//---------------------------END-SETTINGS------------------------//
 
+//---------------------------PROFILE------------------------//
+
+    Route::group(['prefix' => 'profile'], function(){
+
+        Route::get('edit','ProfileController@editProfile') -> name('edit.profile');
+        Route::put('update','ProfileController@updateProfile') -> name('update.profile');
+        //Route::put('update/password','ProfileController@updatePassword') -> name('update.profile.password');
+
+    });
+//---------------------------END-PROFILE------------------------//
 
 });
 
 
-//---------------------------ADMIN------------------------//
+//---------------------------END-ADMIN------------------------//
 
 
 
@@ -70,7 +77,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware' => 'guest:admin' , 'pref
     Route::get('login','LoginController@login') -> name('admin.login');
     Route::post('login','LoginController@postLogin') -> name('admin.post.login');
 });
-//---------------------------LOGIN------------------------//
+//---------------------------END-LOGIN------------------------//
 
 
 });
