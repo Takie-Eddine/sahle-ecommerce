@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProfileRequest extends FormRequest
+class MainCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,17 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required',
+            'slug' => 'required|unique:categories,slug,'.$this -> id
+        ];
+    }
 
-            'name '=> 'required,'.$this -> id ,
-            'email' => 'required|email|unique:admins,email,'.$this -> id ,
-            'password' => 'nullable|confirmed|min:6'
+    public function messages()
+    {
+        return [
+
+
+
         ];
     }
 }
