@@ -87,7 +87,7 @@ Route::get('logout','LoginController@logout') -> name('admin.logout');
 
 //---------------------------CATEGORIES------------------------//
 
-Route::group(['prefix' => 'sub_categories'], function(){
+/*Route::group(['prefix' => 'sub_categories'], function(){
 
     Route::get('/','SubCategoriesController@index') -> name('admin.subcategories');
     Route::get('create','SubCategoriesController@create') -> name('admin.subcategories.create');
@@ -98,7 +98,7 @@ Route::group(['prefix' => 'sub_categories'], function(){
     //Route::get('changeStatus/{id}','MainCategoriesController@changeStatus') -> name('admin.maincategories.status');
 
 
-});
+});*/
 
 
 //---------------------------END-CATEGORIES------------------------//
@@ -120,6 +120,19 @@ Route::group(['prefix' => 'brands'], function(){
 
 
 //---------------------------END-BRANDS------------------------//
+
+//---------------------------TAGS------------------------//
+
+Route::group(['prefix' => 'tags'], function () {
+    Route::get('/','TagsController@index') -> name('admin.tags');
+    Route::get('create','TagsController@create') -> name('admin.tags.create');
+    Route::post('store','TagsController@store') -> name('admin.tags.store');
+    Route::get('edit/{id}','TagsController@edit') -> name('admin.tags.edit');
+    Route::post('update/{id}','TagsController@update') -> name('admin.tags.update');
+    Route::get('delete/{id}','TagsController@destroy') -> name('admin.tags.delete');
+});
+
+//---------------------------END-TAGS------------------------//
 
 
 
