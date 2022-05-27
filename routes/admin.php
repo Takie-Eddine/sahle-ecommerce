@@ -134,6 +134,17 @@ Route::group(['prefix' => 'tags'], function () {
 
 //---------------------------END-TAGS------------------------//
 
+//---------------------------PRODUCT------------------------//
+
+Route::group(['prefix' => 'products'], function () {
+    Route::get('/','productsController@index') -> name('admin.products');
+    Route::get('general-information','productsController@create') -> name('admin.products.general.create');
+    Route::post('store-general-information','productsController@store') -> name('admin.products.general.store');
+
+});
+
+//---------------------------END-PRODUCT------------------------//
+
 
 
 });

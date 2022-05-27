@@ -86,6 +86,22 @@
                 </ul>
             </li>
 
+            <li class="nav-item"><a href=""><i class="la la-male"></i>
+                <span class="menu-title" data-i18n="nav.dash.main">المنتجات  </span>
+                <span
+                    class="badge badge badge-success badge-pill float-right mr-2"> {{\App\Models\Product::count()}}</span>
+            </a>
+            <ul class="menu-content">
+                <li class="active"><a class="menu-item" href=""
+                                        data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                </li>
+                <li><a class="menu-item" href="{{route('admin.products.general.create')}}"
+                        data-i18n="nav.dash.crypto">أضافة
+                        منتج جديد </a>
+                </li>
+            </ul>
+        </li>
+
 
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
                                                                                     data-i18n="nav.templates.main">{{ __('admin/sidebar.settings') }}</span></a>
