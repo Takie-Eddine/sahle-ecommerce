@@ -95,7 +95,7 @@ class AttributesController extends Controller
             }
 
 
-            $attibuteTra = AttributeTranslation::where('category_id' , '=' , $id);
+            $attibuteTra = AttributeTranslation::where('attribute_id' , '=' , $id);
 
 
             $attribute->delete();

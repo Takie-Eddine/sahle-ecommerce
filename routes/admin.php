@@ -178,7 +178,7 @@ Route::group(['prefix' => 'options'], function () {
     Route::get('/', 'OptionsController@index')->name('admin.options');
     Route::get('create', 'OptionsController@create')->name('admin.options.create');
     Route::post('store', 'OptionsController@store')->name('admin.options.store');
-    //Route::get('delete/{id}','OptionsController@destroy') -> name('admin.options.delete');
+    Route::get('delete/{id}','OptionsController@destroy') -> name('admin.options.delete');
     Route::get('edit/{id}', 'OptionsController@edit')->name('admin.options.edit');
     Route::post('update/{id}', 'OptionsController@update')->name('admin.options.update');
 });

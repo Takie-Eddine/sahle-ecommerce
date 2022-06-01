@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\OptionsRequest;
 use App\Models\Attribute;
 use App\Models\Option;
+use App\Models\OptionTranslation;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -91,23 +92,32 @@ class OptionsController extends Controller
     }
 
 
-    /*public function destroy($id)
+    public function destroy($id)
     {
+        DB::beginTransaction();
 
         try {
-            //get specific categories and its translations
-            $category = Category::orderBy('id', 'DESC')->find($id);
 
-            if (!$category)
-                return redirect()->route('admin.maincategories')->with(['error' => 'هذا القسم غير موجود ']);
+            $option = Option::orderBy('id', 'DESC')->find($id);
 
-            $category->delete();
+            if (!$option){
+                return redirect()->route('admin.options')->with(['error' => 'هذا القسم غير موجود ']);
+            }
 
-            return redirect()->route('admin.maincategories')->with(['success' => 'تم  الحذف بنجاح']);
+            $optionTra = OptionTranslation::where('option_id' , '=' , $id);
+
+
+            $option->delete();
+            $optionTra->delete();
+
+            DB::commit();
+
+            return redirect()->route('admin.options')->with(['success' => 'تم  الحذف بنجاح']);
 
         } catch (\Exception $ex) {
-            return redirect()->route('admin.maincategories')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            DB::rollback();
+            return redirect()->route('admin.options')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
-    }*/
+    }
 
 }
