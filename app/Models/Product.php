@@ -55,35 +55,35 @@ class Product extends Model
         return $this->belongsTo(Brand::class)->withDefault();
     }
 
-    /*public function getActive()
+    public function getActive()
     {
         return $this->is_active == 0 ? 'غير مفعل' : 'مفعل';
-    }*/
+    }
 
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'product_categories');
     }
 
-    /*public function scopeActive($query)
+    public function scopeActive($query)
     {
         return $query->where('is_active', 1);
-    }*/
+    }
 
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'product_tags');
     }
 
-    /*public function options()
+    public function options()
     {
         return $this->hasMany(Option::class, 'product_id');
-    }*/
+    }
 
     //////
     ///
 
-    /*public function images()
+    public function images()
     {
         return $this->hasMany(Image::class, 'product_id');
     }
@@ -108,5 +108,5 @@ public function getTotal($converted = true)
     {
         return $total =  $this->special_price ?? $this -> price;
 
-    }*/
+    }
 }
