@@ -114,6 +114,7 @@ class SubCategoriesController extends Controller
 
             if (!$category)
                 return redirect()->route('admin.subcategories')->with(['error' => 'هذا القسم غير موجود ']);
+
                 $categoryTra = CategoryTranslation::where('category_id' , '=' , $id);
 
             $category->delete();
