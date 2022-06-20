@@ -2,11 +2,15 @@
 
 namespace App\Providers;
 
+use App\Basket\Basket;
+use App\Support\Storage\SessionStorage;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View;
 
 class AppServiceProvider extends ServiceProvider
 {
+    public Basket $basket;
     /**
      * Register any application services.
      *
@@ -15,7 +19,12 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         Schema::defaultStringLength(191) ;
-        //
+
+        $this->app->bind(StorageInterface::class, function ($app) {
+            return new SessionStorage('basket');
+
+        });
+
     }
 
     /**
@@ -25,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
+
     }
 }

@@ -88,6 +88,8 @@ class MainCategoriesController extends Controller
 
 
 
+
+
             $category = Category::find($id);
 
             if (!$category)
@@ -100,7 +102,7 @@ class MainCategoriesController extends Controller
 
             $category->update($request->all());
 
-
+            //save translations
             $category->name = $request->name;
             $category->save();
 

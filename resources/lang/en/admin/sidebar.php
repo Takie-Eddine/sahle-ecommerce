@@ -14,4 +14,6 @@ return [
     'local shipping' => 'Local Shipping' ,
     'outer shipping' => 'Outer Shipping' ,
 
+    'main slider'  => 'Main Slider',
+
 ];
