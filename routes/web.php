@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| site Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -13,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+Route::get('test', function () {
 
-Route::get('testLayout',function(){
-    return view('layouts.admin');
+    $category =  \App\Models\Category::with('trees')->find(35);
+
+
+
+    return $category;
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

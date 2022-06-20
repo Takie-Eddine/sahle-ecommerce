@@ -14,4 +14,6 @@ return [
     'local shipping' => 'توصيل داخلي' ,
     'outer shipping' => 'توصيل خارجي' ,
 
+    'main slider'  => 'اسليدر الرئيسية ',
+
 ];
